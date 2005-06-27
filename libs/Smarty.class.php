@@ -30,7 +30,7 @@
  * @version 2.6.9
  */
 
-/* $Id: Smarty.class.php,v 1.1 2005/06/18 00:25:07 bitweaver Exp $ */
+/* $Id: Smarty.class.php,v 1.1.1.1.2.1 2005/06/27 18:59:19 lsces Exp $ */
 
 /**
  * DIR_SEP isn't used anymore, but third party apps might
@@ -43,6 +43,7 @@ if(!defined('DIR_SEP')) {
  * set SMARTY_DIR to absolute path to Smarty library files.
  * if not defined, include_path will be used. Sets SMARTY_DIR only if user
  * application has not already defined it.
+ * @ignore
  */
 
 if (!defined('SMARTY_DIR')) {
