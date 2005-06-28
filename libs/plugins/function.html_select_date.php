@@ -31,6 +31,7 @@
  * @param array
  * @param Smarty
  * @return string
+ * @ignore
  */
 function smarty_function_html_select_date($params, &$smarty)
 {

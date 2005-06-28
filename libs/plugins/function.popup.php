@@ -17,6 +17,7 @@
  * @param array
  * @param Smarty
  * @return string
+ * @ignore
  */
 function smarty_function_popup($params, &$smarty)
 {

@@ -18,6 +18,7 @@
  * @param Smarty
  * @return string
  * @uses smarty_make_timestamp()
+ * @ignore
  */
 function smarty_function_html_select_time($params, &$smarty)
 {
