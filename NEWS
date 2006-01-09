@@ -1,3 +1,46 @@
+Version 2.6.11 (Dec 14, 2005)
+-----------------------------
+
+ - fixed code generation of non-cacheable blocks to play well with php's
+   "Alternative syntax for control structures" (kihara, messju)
+ - fix handling of multiple identical inserts in one display()-call (messju)
+ - replace {} string access with equivalent substr() to avoid E_STRICT
+   warnings in PHP 5.1 (boots)
+ - return valid reference in get_config_vars() when given var is
+   non-existant (Thomas Schulz, boots)
+ - plugin html_image: fix incorrect secure_dir error when
+   file doesn't exist (monte)
+ - plugin html_image: add path_prefix param (monte)
+ - add char_set parameter to escape modifier (Loading, monte)
+ - fix notice in debug security check (Drakla, monte)
+ - return valid reference in get_template_vars() when given var is
+   non-existant (monte)
+ - add escape type "urlpathinfo" to escape modifier (monte)
+
+Version 2.6.10 (Aug 5, 2005)
+----------------------------
+
+  - allow secure_dir to be a filename, not just
+    a directory name (monte)
+  - set debug.tpl as a secure_dir, not the entire
+    SMARTY_DIR (monte)
+  - fix proper escaping for literal strings in
+    Smarty_Compiler::_parse_var_props() (boots, messju)
+  - remove ambiguity for numeric values passed to smarty_make_timestamp()
+    (and thus the date_format modifier). numeric values are treated as
+    timestamps now. (andreas, messju)
+  - add passthru attribute feature to html_select_date (Sedgar,
+    monte)
+  - add "middle" parameter to truncate (monte)
+  - make form input label ids optional (monte)
+  - add error message for empty if/elseif statements (eykanal,
+    monte)
+  - cast selected value to string for comparison in html_radios
+    (Exeption, monte)
+  - updated html_select_date's year_as_text-feature to be xhtml compliant
+    (Mark West, messju)
+  - fix handling of selected month html_select_date (Yuri Weseman, messju)
+
 Version 2.6.9 (Mar 31, 2005)
 ----------------------------
 
@@ -301,7 +344,7 @@ Version 2.5.0-RC2 (March 26, 2003)
       the "checked" value of html_radios (Monte)
     - fixed errormessage in _compile_smarty_ref() (messju)
     - updated docs for html_image "name" -> "file" (messju)
-    - fixed bug with html_options-optgroups (Nichlas Löfdahl, messju)
+    - fixed bug with html_options-optgroups (Nichlas Lfdahl, messju)
     - cleaned up calls to readdir() (messju)
     - fixed bug with passing multiple modifiers to a parameter
       (Monte)
@@ -365,7 +408,7 @@ Version 2.5.0-RC1 (March 5, 2003)
     - fix cache groups with compile_id set (Monte)
     - add support for merging appended vars (messju, Monte)
     - allow null as function attribute value
-      (André Rabold, Monte)
+      (Andr?abold, Monte)
     - support $foo->bar[index] syntax (Monte)
     - add get_registered_object function (messju, Monte)
     - treat unrecognized param attribute syntax as string (Monte)
