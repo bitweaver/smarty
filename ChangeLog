@@ -1,3 +1,287 @@
+2005-12-08  Messju Mohr  <messju@lammfellpuschen.de>
+
+    * docs/de/getting-started.xml:
+      sync with en
+
+2005-11-29  Messju Mohr  <messju@lammfellpuschen.de>
+
+    * NEWS
+      libs/Smarty_Compiler.class.php:
+      fixed code generation of non-cacheable blocks to play well with php's
+      "Alternative syntax" used for example in compiled {if}..{else}..{/if}
+      blocks.
+      
+      (see: http://php.net/manual/en/control-structures.alternative-syntax.php
+      on "Alternative syntax")
+      
+      thanks to kihara from the forum.
+
+2005-11-26  Messju Mohr  <messju@lammfellpuschen.de>
+
+    * NEWS:
+      fixed handling of multiple identical calls to {insert}.
+      
+      the function was called multiple times, but all inserts where replaced
+      by the results of the first call to the insert function.
+
+    * libs/plugins/compiler.assign.php
+      libs/plugins/function.config_load.php:
+      added credits
+
+    * libs/plugins/function.popup.php:
+      added "closeclick" from
+      http://www.bosrup.com/web/overlib/?Command_Reference
+
+2005-11-23  boots  <jayboots@yahoo.com>
+
+    * NEWS
+      libs/Config_File.class.php
+      libs/Smarty.class.php
+      libs/Smarty_Compiler.class.php
+      libs/plugins/modifier.escape.php:
+      replace {} string access with equivalent substr() to avoid E_STRICT
+      warnings in PHP 5.1
+
+2005-11-09  boots  <jayboots@yahoo.com>
+
+    * NEWS
+      libs/Smarty.class.php:
+      return valid reference in get_config_vars() when given var is non-existant
+
+2005-10-11  Monte Ohrt  <monte@ohrt.com>
+
+    * libs/plugins/block.textformat.php
+      libs/plugins/compiler.assign.php
+      libs/plugins/function.assign_debug_info.php
+      libs/plugins/function.config_load.php
+      libs/plugins/function.counter.php
+      libs/plugins/function.eval.php
+      libs/plugins/function.fetch.php
+      libs/plugins/function.html_options.php
+      libs/plugins/function.html_select_date.php
+      libs/plugins/function.html_select_time.php
+      libs/plugins/function.math.php
+      libs/plugins/function.popup.php
+      libs/plugins/function.popup_init.php
+      libs/plugins/modifier.capitalize.php
+      libs/plugins/modifier.count_characters.php
+      libs/plugins/modifier.count_paragraphs.php
+      libs/plugins/modifier.count_sentences.php
+      libs/plugins/modifier.count_words.php
+      libs/plugins/modifier.date_format.php
+      libs/plugins/modifier.debug_print_var.php
+      libs/plugins/modifier.default.php
+      libs/plugins/modifier.escape.php
+      libs/plugins/modifier.indent.php
+      libs/plugins/modifier.lower.php
+      libs/plugins/modifier.regex_replace.php
+      libs/plugins/modifier.replace.php
+      libs/plugins/modifier.spacify.php
+      libs/plugins/modifier.string_format.php
+      libs/plugins/modifier.strip_tags.php
+      libs/plugins/modifier.truncate.php
+      libs/plugins/modifier.upper.php
+      libs/plugins/modifier.wordwrap.php
+      libs/plugins/shared.escape_special_chars.php
+      libs/plugins/shared.make_timestamp.php:
+      Added author title to plugins where they don't exist. I put my name where I
+      was the original or co-author. If there needs to be more credit given
+      somewhere, speak up!
+
+2005-10-10  Monte Ohrt  <monte@ohrt.com>
+
+    * NEWS
+      libs/plugins/function.html_image.php:
+      add path_prefix to html_image, fix incorrect secure_dir error when image
+      file is missing
+
+2005-10-04  Monte Ohrt  <monte@ohrt.com>
+
+    * demo/templates/index.tpl:
+      remove popup example, update section var syntax
+
+2005-09-16  Nuno Lopes  <nunoplopes@sapo.pt>
+
+    * docs/de/getting-started.xml:
+      more fixes
+
+    * docs/de/getting-started.xml:
+      fix php bug #34520: broken example display (de only)
+
+2005-08-30  Monte Ohrt  <monte@ohrt.com>
+
+    * libs/plugins/modifier.escape.php:
+      change default charset from utf8 to iso-8859-1
+
+    * NEWS
+      libs/plugins/modifier.escape.php:
+      add char_set param
+
+2005-08-17  Monte Ohrt  <monte@ohrt.com>
+
+    * NEWS:
+      fix notice in debug security check
+
+    * libs/Smarty.class.php:
+      fix typo
+
+    * NEWS
+      libs/Smarty.class.php:
+      return valid reference in get_template_vars() when given var is
+      non-existant
+
+2005-08-12  Monte Ohrt  <monte@ohrt.com>
+
+    * NEWS
+      libs/plugins/modifier.escape.php:
+      add "urlpathinfo" escape type to escape modifier. (apache does not like %2F
+      in the PATH_INFO)
+
+2005-08-05  Monte Ohrt  <monte@ohrt.com>
+
+    * NEWS
+      libs/Config_File.class.php
+      libs/Smarty.class.php
+      libs/Smarty_Compiler.class.php:
+      update version numbers
+
+2005-08-04  Monte Ohrt  <monte@ohrt.com>
+
+    * NEWS:
+      update secure_dir notes
+
+    * NEWS:
+      allow debug.tpl to work from arbitrary dir
+
+2005-08-04  Messju Mohr  <messju@lammfellpuschen.de>
+
+    * NEWS
+      libs/Smarty_Compiler.class.php:
+      fixed proper escaping for literal strings passed to
+      Smarty_Compiler::_expand_quoted_text() by
+      Smarty_Compiler::_parse_var_props()
+
+2005-07-27  Messju Mohr  <messju@lammfellpuschen.de>
+
+    * NEWS
+      libs/plugins/shared.make_timestamp.php:
+      removed ambiguity for numeric values passed to smarty_make_timestamp().
+      numeric values are *always* treated as timestamps now.
+
+2005-07-18  Messju Mohr  <messju@lammfellpuschen.de>
+
+    * libs/Config_File.class.php:
+      removed E_NOTICE from Config_File::get()
+
+    * libs/Smarty.class.php:
+      removed E_NOTICE
+
+2005-07-10  Yannick Torres  <yannick.torres@keliglia.com>
+
+    * docs/fr/getting-started.xml:
+      sync with EN
+
+2005-07-08  Monte Ohrt  <monte@ohrt.com>
+
+    * NEWS:
+      correct username in NEWS file
+
+    * NEWS
+      libs/plugins/function.html_select_date.php:
+      added passthru attribute feature to html_select_date
+
+2005-07-03  Yannick Torres  <yannick.torres@keliglia.com>
+
+    * docs/fr/language-snippets.ent
+      docs/fr/preface.xml:
+      sync with EN
+
+2005-06-16  Messju Mohr  <messju@lammfellpuschen.de>
+
+    * docs/de/preface.xml
+      docs/de/preface.xml:
+      sync with en
+
+2005-06-13  Monte Ohrt  <monte@ohrt.com>
+
+    * NEWS
+      libs/plugins/modifier.truncate.php:
+      add "middle" parameter to truncate modifier
+
+2005-06-10  Messju Mohr  <messju@lammfellpuschen.de>
+
+    * docs/de/livedocs.ent:
+      added german livedocs.ent
+
+    * docs/de/language-snippets.ent
+      docs/de/preface.xml:
+      sync with en
+
+2005-06-09  Messju Mohr  <messju@lammfellpuschen.de>
+
+    * docs/de/bookinfo.xml
+      docs/de/getting-started.xml
+      docs/de/getting-started.xml:
+      sync with en
+
+2005-05-24  Yannick Torres  <yannick.torres@keliglia.com>
+
+    * docs/fr/getting-started.xml
+      docs/fr/language-snippets.ent:
+      sync with EN
+
+2005-05-20  Monte Ohrt  <monte@ohrt.com>
+
+    * libs/plugins/function.html_radios.php:
+      fix allowable label id characters
+
+2005-05-06  Monte Ohrt  <monte@ohrt.com>
+
+    * NEWS
+      libs/plugins/function.html_radios.php:
+      make form input label ids optional (monte)
+
+2005-05-02  Monte Ohrt  <monte@ohrt.com>
+
+    * NEWS
+      libs/Smarty_Compiler.class.php:
+      add error message for empty if/elseif statements
+
+2005-04-15  Monte Ohrt  <monte@ohrt.com>
+
+    * NEWS
+      libs/plugins/function.html_radios.php:
+      cast selected value to string for comparison in html_radios
+
+2005-04-07  Messju Mohr  <messju@lammfellpuschen.de>
+
+    * NEWS
+      libs/plugins/function.html_select_date.php:
+      added xhtml compliance to html_select_date's year_as_text-feature
+      thanks to Mark West
+
+    * NEWS
+      libs/plugins/function.html_select_date.php:
+      fixed handling of selected month html_select_date
+      thanks to Yuri Weseman for providing problem+solution
+
+2005-04-07  Nuno Lopes  <nunoplopes@sapo.pt>
+
+    * docs/configure.in:
+      sync configure and file-entities scripts with phpdoc, for better
+      windows/cygwin support
+
+2005-03-31  Monte Ohrt  <monte@ohrt.com>
+
+    * libs/Config_File.class.php
+      libs/Smarty.class.php
+      libs/Smarty_Compiler.class.php:
+      update version numbers
+
+    * (Smarty_2_6_9)
+      NEWS:
+      update NEWS file
+
 2005-03-30  Messju Mohr  <messju@lammfellpuschen.de>
 
     * libs/plugins/function.math.php:
@@ -3313,7 +3597,7 @@
 
     * libs/Smarty.class.php
       libs/Smarty_Compiler.class.php:
-      added CVS $Id: ChangeLog,v 1.1 2005/06/18 00:25:05 bitweaver Exp $
+      added CVS $Id: ChangeLog,v 1.2 2006/01/10 21:18:18 squareing Exp $
 
 2003-03-31  Messju Mohr  <messju@lammfellpuschen.de>
 

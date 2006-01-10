@@ -14,10 +14,10 @@
  * Purpose:  make text pop up in windows via overlib
  * @link http://smarty.php.net/manual/en/language.function.popup.php {popup}
  *          (Smarty online manual)
+ * @author   Monte Ohrt <monte at ohrt dot com>
  * @param array
  * @param Smarty
  * @return string
- * @ignore
  */
 function smarty_function_popup($params, &$smarty)
 {
@@ -89,6 +89,7 @@ function smarty_function_popup($params, &$smarty)
             case 'vauto':
             case 'mouseoff':
             case 'followmouse':
+            case 'closeclick':
                 if ($_value) $append .= ',' . strtoupper($_key);
                 break;
 
