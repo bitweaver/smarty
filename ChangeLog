@@ -1,3 +1,51 @@
+2006-01-15  Messju Mohr  <messju@lammfellpuschen.de>
+
+    * NEWS
+      libs/Smarty_Compiler.class.php:
+      fixed use of references $cache_attrs and $repeat in Smarty_Compiler.
+      
+      php does not allow to pass an assigned by reference to a function. since
+      php-5.1.2
+      the reference to the lval gets lost when passing an assignment.
+
+2005-12-31  Messju Mohr  <messju@lammfellpuschen.de>
+
+    * NEWS
+      libs/Smarty.class.php:
+      fixed incompatible use of fread() in Smarty::_read_file()
+      it choke on php-5.1.1 and later.
+      thanks to andig for pointing this out.
+
+2005-12-21  boots  <jayboots@yahoo.com>
+
+    * NEWS
+      libs/Smarty_Compiler.class.php:
+      Fix improper tokenization of certain inline math expressions.
+      
+      Thanks to gerard at forums for reporting this.
+
+2005-12-19  Messju Mohr  <messju@lammfellpuschen.de>
+
+    * libs/plugins/function.math.php:
+      fixed problem with math in certain LC_NUMERIC locales.
+      thanks to wiebren for providing problem+solution.
+
+2005-12-14  Messju Mohr  <messju@lammfellpuschen.de>
+
+    * NEWS:
+      fixed iso-latin1 special chars
+
+2005-12-14  Monte Ohrt  <monte@ohrt.com>
+
+    * libs/Config_File.class.php
+      libs/Smarty.class.php
+      libs/Smarty_Compiler.class.php:
+      update version numbers
+
+    * (Smarty_2_6_11)
+      NEWS:
+      commit NEWS file for 2.6.11
+
 2005-12-08  Messju Mohr  <messju@lammfellpuschen.de>
 
     * docs/de/getting-started.xml:
@@ -3597,7 +3645,7 @@
 
     * libs/Smarty.class.php
       libs/Smarty_Compiler.class.php:
-      added CVS $Id: ChangeLog,v 1.1.1.1.2.1 2006/01/09 08:28:28 squareing Exp $
+      added CVS $Id: ChangeLog,v 1.1.1.1.2.2 2006/01/19 08:47:14 squareing Exp $
 
 2003-03-31  Messju Mohr  <messju@lammfellpuschen.de>
 

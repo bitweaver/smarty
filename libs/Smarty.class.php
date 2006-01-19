@@ -27,10 +27,10 @@
  * @author Monte Ohrt <monte at ohrt dot com>
  * @author Andrei Zmievski <andrei@php.net>
  * @package Smarty
- * @version 2.6.11
+ * @version 2.6.12
  */
 
-/* $Id: Smarty.class.php,v 1.1.1.1.2.2 2006/01/09 08:28:28 squareing Exp $ */
+/* $Id: Smarty.class.php,v 1.1.1.1.2.3 2006/01/19 08:47:14 squareing Exp $ */
 
 /**
  * DIR_SEP isn't used anymore, but third party apps might
@@ -464,7 +464,7 @@ class Smarty
      *
      * @var string
      */
-    var $_version              = '2.6.11';
+    var $_version              = '2.6.12';
 
     /**
      * current template inclusion depth
@@ -1715,7 +1715,10 @@ class Smarty
     function _read_file($filename)
     {
         if ( file_exists($filename) && ($fd = @fopen($filename, 'rb')) ) {
-            $contents = ($size = filesize($filename)) ? fread($fd, $size) : '';
+            $contents = '';
+            while (!feof($fd)) {
+                $contents .= fread($fd, 8192);
+            }
             fclose($fd);
             return $contents;
         } else {
