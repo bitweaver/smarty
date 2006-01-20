@@ -18,14 +18,14 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
  * @link http://smarty.php.net/
- * @version 2.6.11
+ * @version 2.6.12
  * @copyright Copyright: 2001-2005 New Digital Group, Inc.
  * @author Andrei Zmievski <andrei@php.net>
  * @access public
  * @package Smarty
  */
 
-/* $Id: Config_File.class.php,v 1.2 2006/01/10 21:18:19 squareing Exp $ */
+/* $Id: Config_File.class.php,v 1.3 2006/01/20 11:11:35 squareing Exp $ */
 
 /**
  * Config file reading class
