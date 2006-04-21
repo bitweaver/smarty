@@ -26,7 +26,7 @@
  * @package Smarty
  */
 
-/* $Id: Smarty_Compiler.class.php,v 1.3 2006/01/20 11:11:35 squareing Exp $ */
+/* $Id: Smarty_Compiler.class.php,v 1.4 2006/04/21 13:07:43 squareing Exp $ */
 
 /**
  * Template compiling class
@@ -332,7 +332,9 @@ class Smarty_Compiler extends Smarty {
                 /* strip all $text_blocks before the next '/strip' */
                 for ($j = $i + 1; $j < $for_max; $j++) {
                     /* remove leading and trailing whitespaces of each line */
-                    $text_blocks[$j] = preg_replace('![\t ]*[\r\n]+[\t ]*!', '', $text_blocks[$j]);
+					if( !defined( 'TEMPLATE_DEBUG' ) || TEMPLATE_DEBUG != TRUE ) {
+						$text_blocks[$j] = preg_replace('![\t ]*[\r\n]+[\t ]*!', '', $text_blocks[$j]);
+					}
                     if ($compiled_tags[$j] == '{/strip}') {                       
                         /* remove trailing whitespaces from the last text_block */
                         $text_blocks[$j] = rtrim($text_blocks[$j]);
