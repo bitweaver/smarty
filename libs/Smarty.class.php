@@ -27,10 +27,10 @@
  * @author Monte Ohrt <monte at ohrt dot com>
  * @author Andrei Zmievski <andrei@php.net>
  * @package Smarty
- * @version 2.6.12
+ * @version 2.6.13-dev
  */
 
-/* $Id: Smarty.class.php,v 1.4 2006/01/20 11:11:35 squareing Exp $ */
+/* $Id: Smarty.class.php,v 1.5 2006/06/10 10:28:33 squareing Exp $ */
 
 /**
  * DIR_SEP isn't used anymore, but third party apps might
@@ -464,7 +464,7 @@ class Smarty
      *
      * @var string
      */
-    var $_version              = '2.6.12';
+    var $_version              = '2.6.13-dev';
 
     /**
      * current template inclusion depth

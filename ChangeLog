@@ -1,3 +1,78 @@
+2006-05-25  boots  <jayboots@yahoo.com>
+
+    * NEWS
+      libs/Smarty_Compiler.class.php:
+      un-hide hidden xml open tags
+
+2006-05-09  boots  <jayboots@yahoo.com>
+
+    * NEWS
+      libs/Smarty_Compiler.class.php:
+      separate handling of comment blocks from "special blocks"
+
+    * NEWS
+      libs/plugins/function.popup_init.php:
+      reverted {popup_init} as proposed change to insertion behviour was not BC
+
+2006-05-04  boots  <jayboots@yahoo.com>
+
+    * NEWS
+      libs/plugins/function.popup_init.php:
+      changed {popup_init} to only emit code once during a request
+      
+      Thanks to TGKnIght from forums
+
+2006-04-22  Messju Mohr  <messju@lammfellpuschen.de>
+
+    * NEWS
+      libs/Smarty_Compiler.class.php:
+      fix handling of block-methods of registered objects
+      thanks to El Hombre Gris
+
+2006-04-04  Monte Ohrt  <monte@ohrt.com>
+
+    * libs/plugins/function.html_select_date.php:
+      fix typo
+
+2006-03-09  Monte Ohrt  <monte@ohrt.com>
+
+    * (Smarty_2_6_13)
+      NEWS:
+      update for release
+
+2006-03-08  Monte Ohrt  <monte@ohrt.com>
+
+    * libs/plugins/modifier.regex_replace.php:
+      remove delim quote
+
+    * libs/plugins/modifier.regex_replace.php:
+      fix delimiter issue
+
+2006-03-03  Monte Ohrt  <monte@ohrt.com>
+
+    * libs/plugins/modifier.regex_replace.php:
+      use preg_replace to cover any space chars
+
+    * libs/plugins/modifier.regex_replace.php:
+      fix problem with allowing "e" modifier
+
+2006-01-29  Messju Mohr  <messju@lammfellpuschen.de>
+
+    * libs/Smarty_Compiler.class.php:
+      removed possiblity for E_NOTICE on an undefined variable in
+      Smarty_Compiler::_compile_if_tag() - thanks to sbeh
+
+2006-01-18  Monte Ohrt  <monte@ohrt.com>
+
+    * libs/Config_File.class.php
+      libs/Smarty.class.php
+      libs/Smarty_Compiler.class.php:
+      update version numbers
+
+    * (Smarty_2_6_12)
+      NEWS:
+      commit 2.6.12 release
+
 2006-01-15  Messju Mohr  <messju@lammfellpuschen.de>
 
     * NEWS
@@ -3645,7 +3720,7 @@
 
     * libs/Smarty.class.php
       libs/Smarty_Compiler.class.php:
-      added CVS $Id: ChangeLog,v 1.3 2006/01/20 11:11:35 squareing Exp $
+      added CVS $Id: ChangeLog,v 1.4 2006/06/10 10:28:32 squareing Exp $
 
 2003-03-31  Messju Mohr  <messju@lammfellpuschen.de>
 
