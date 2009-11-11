@@ -30,7 +30,7 @@
  * @version 2.6.26
  */
 
-/* $Id: Smarty.class.php,v 1.9 2009/07/24 17:48:35 spiderr Exp $ */
+/* $Id: Smarty.class.php,v 1.10 2009/11/11 16:03:52 dansut Exp $ */
 
 /**
  * DIR_SEP isn't used anymore, but third party apps might
@@ -1118,8 +1118,10 @@ class Smarty
     {
         static $_cache_info = array();
         
-        $_smarty_old_error_level = $this->debugging ? error_reporting() : error_reporting(isset($this->error_reporting)
-               ? $this->error_reporting : error_reporting() & ~E_NOTICE);
+//      Below modified as in bitweaver we don't want to see NOTICEs from templates even when debugging
+//        $_smarty_old_error_level = $this->debugging ? error_reporting() : error_reporting(isset($this->error_reporting)
+//               ? $this->error_reporting : error_reporting() & ~E_NOTICE);
+        $_smarty_old_error_level = error_reporting(isset($this->error_reporting) ? $this->error_reporting : error_reporting() & ~E_NOTICE);
 
         if (!$this->debugging && $this->debugging_ctrl == 'URL') {
             $_query_string = $this->request_use_auto_globals ? $_SERVER['QUERY_STRING'] : $GLOBALS['HTTP_SERVER_VARS']['QUERY_STRING'];
