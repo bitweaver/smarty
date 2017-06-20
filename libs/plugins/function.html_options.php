@@ -135,12 +135,12 @@ function smarty_function_html_options($params)
 
     if (isset($options)) {
         foreach ($options as $_key => $_val) {
-            $_html_result .= smarty_function_html_options_optoutput($_key, $_val, $selected, $id, $class, $_idx);
+            $_html_result .= smarty_function_html_options_optoutput($_key, $_val, $selected, $id, NULL, $_idx);
         }
     } else {
         foreach ($values as $_i => $_key) {
             $_val = isset($output[ $_i ]) ? $output[ $_i ] : '';
-            $_html_result .= smarty_function_html_options_optoutput($_key, $_val, $selected, $id, $class, $_idx);
+            $_html_result .= smarty_function_html_options_optoutput($_key, $_val, $selected, $id, NULL, $_idx);
         }
     }
 
