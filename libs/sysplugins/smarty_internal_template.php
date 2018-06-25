@@ -277,7 +277,14 @@ class Smarty_Internal_Template extends Smarty_Internal_TemplateBase
         $tpl->parent = $this;
         $smarty = &$this->smarty;
         $_templateId = $smarty->_getTemplateId($template, $cache_id, $compile_id, $caching, $tpl);
+
         // recursive call ?
+        if (!empty($data)) {
+            // set up variable values
+            foreach ($data as $_key => $_val) {
+                $tpl->tpl_vars[ $_key ] = new Smarty_Variable($_val, $this->isRenderingCache);
+            }
+        }
         if (isset($tpl->templateId) ? $tpl->templateId : $tpl->_getTemplateId() != $_templateId) {
             // already in template cache?
             if (isset(self::$tplObjCache[ $_templateId ])) {
@@ -337,12 +344,6 @@ class Smarty_Internal_Template extends Smarty_Internal_TemplateBase
             }
         }
 
-        if (!empty($data)) {
-            // set up variable values
-            foreach ($data as $_key => $_val) {
-                $tpl->tpl_vars[ $_key ] = new Smarty_Variable($_val, $this->isRenderingCache);
-            }
-        }
         if ($tpl->caching == 9999) {
             if (!isset($tpl->compiled)) {
                 $this->loadCompiled(true);
